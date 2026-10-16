@@ -13,7 +13,7 @@ interface TabelaProps<T> {
     chave: (linha: T) => string | number;
     carregando?: boolean;
     linkNovo?: { texto: string; url: string };
-    textoBusca?: (linha: T) => string; // se vier, mostra o campo de busca
+    textoBusca?: (linha: T) => string;
     placeholderBusca?: string;
 }
 
@@ -44,7 +44,7 @@ function Tabela<T>({
 
     return (
         <main className="bg-gray-200 flex-1 flex flex-col px-4 sm:px-6 md:px-10 py-6 md:py-10">
-            <div className="w-full max-w-7xl mx-auto flex flex-col sm:flex-row items-center gap-4 mb-6">
+            <div className="w-full max-w-screen-2xl mx-auto flex flex-col sm:flex-row items-center gap-4 mb-6">
                 <h1 className="flex-1 text-xl sm:text-2xl md:text-3xl text-center sm:text-left font-bold text-slate-800">
                     {titulo}
                 </h1>
@@ -64,13 +64,13 @@ function Tabela<T>({
                     value={busca}
                     onChange={(e) => { setBusca(e.target.value); setPagina(1); }}
                     placeholder={placeholderBusca}
-                    className="w-full max-w-7xl mx-auto p-3 mb-4 border-b-2 border-emerald-700 rounded-sm bg-transparent focus:outline-none"
+                    className="w-full max-w-screen-2xl mx-auto p-3 mb-4 border-b-2 border-emerald-700 rounded-sm bg-transparent focus:outline-none"
                 />
             )}
 
-            <div className="w-full max-w-7xl mx-auto bg-white rounded-xl shadow-xl border border-slate-300 overflow-hidden">
-                <div className="overflow-auto">
-                    <table className="table-auto w-full border-collapse text-xs sm:text-sm md:text-base">
+            <div className="w-full max-w-screen-2xl mx-auto bg-white rounded-xl shadow-xl border border-slate-300 overflow-hidden">
+                <div className="overflow-x-auto">
+                    <table className="table-auto w-full min-w-[640px] border-collapse text-xs sm:text-sm md:text-base">
                         <thead className="bg-emerald-700">
                             <tr>
                                 {colunas.map((c) => (

@@ -1,11 +1,11 @@
 import { useState, type JSX } from "react";
 
 const links = [
-    { label: 'Home', url: '/' },
-    { label: 'Clientes', url: '/lista/clientes' },
-    { label: 'Produtos', url: '/lista/produtos' },
-    { label: 'Estoque baixo', url: '/lista/produtos/alerta' },
-    { label: 'Pedidos', url: '/lista/pedidos' },
+    { label: "Home", url: "/" },
+    { label: "Clientes", url: "/lista/clientes" },
+    { label: "Produtos", url: "/lista/produtos" },
+    { label: "Estoque baixo", url: "/lista/produtos/alerta" },
+    { label: "Pedidos", url: "/lista/pedidos" },
 ];
 
 function Navegacao(): JSX.Element {
@@ -34,7 +34,7 @@ function Navegacao(): JSX.Element {
                     onClick={() => setMenuAberto(!menuAberto)}
                     aria-label="Menu"
                 >
-                    {menuAberto ? '✕ Fechar' : '☰ Menu'}
+                    {menuAberto ? "✕ Fechar" : "☰ Menu"}
                 </button>
             </div>
 

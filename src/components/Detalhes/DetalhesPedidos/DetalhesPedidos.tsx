@@ -86,7 +86,7 @@ function DetalhesPedido({ idVenda }: DetalhesPedidoProps): JSX.Element {
 
     if (erro) {
         return (
-            <main className="bg-gray-200 flex-1 flex items-center justify-center p-6">
+            <main className="order-page order-message">
                 <p className="text-red-600 font-semibold">{erro}</p>
             </main>
         );
@@ -94,7 +94,7 @@ function DetalhesPedido({ idVenda }: DetalhesPedidoProps): JSX.Element {
 
     if (!dados) {
         return (
-            <main className="bg-gray-200 flex-1 flex items-center justify-center p-6">
+            <main className="order-page order-message">
                 <p className="text-slate-500 italic">Carregando...</p>
             </main>
         );
@@ -107,7 +107,7 @@ function DetalhesPedido({ idVenda }: DetalhesPedidoProps): JSX.Element {
 
     return (
         <main className="bg-gray-200 flex-1 py-6 sm:py-10 px-4">
-            <div className="w-full max-w-4xl mx-auto flex flex-col gap-6">
+            <div className="w-full max-w-7xl mx-auto flex flex-col gap-6">
                 <section className="bg-white rounded-xl shadow-lg p-6 sm:p-8">
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">Pedido #{pedido.idVenda}</h1>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -126,8 +126,8 @@ function DetalhesPedido({ idVenda }: DetalhesPedidoProps): JSX.Element {
 
                 <section className="bg-white rounded-xl shadow-lg p-6 sm:p-8">
                     <h2 className="text-xl font-bold text-slate-800 mb-4">Itens do pedido</h2>
-                    <div className="overflow-auto border border-slate-200 rounded-lg">
-                        <table className="w-full text-sm">
+                    <div className="overflow-x-auto border border-slate-200 rounded-lg">
+                        <table className="w-full min-w-[680px] text-sm">
                             <thead className="bg-emerald-700 text-white">
                                 <tr>
                                     <th className="p-3 text-left">Produto</th>
